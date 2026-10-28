@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Retention Schedule · Six Vibes</title>
+<link rel="icon" href="/favicon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><a class="brand" href="/"><img src="/logo-mark.png" alt=""><span><span class="six">Six</span><span class="vibes">Vibes</span></span></a></header>
+<main>
+<h1>Six Vibes — Data Retention Schedule</h1>
+<p class="note">Draft — this document is under legal review and may change before launch.</p>
+
+<p><strong>Effective date:</strong> [EFFECTIVE DATE] · Controller: [OPERATOR NAME], <a href="mailto:info@sixvibes.org">info@sixvibes.org</a></p>
+<p>General rule: <strong>we keep your data while your account exists, and delete it when you delete your account</strong> (Profile → Settings → Delete account), except where a longer period is listed below for safety or legal reasons. Backups held by our hosting provider roll off within their backup window.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Data category</th>
+<th>Purpose</th>
+<th>Retention period</th>
+<th>Deletion method</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Email address, sign-in records</td>
+<td>Account and sign-in</td>
+<td>Until account deletion</td>
+<td>Deleted with the account (auth record deleted, cascades to all linked data)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sign-in session token (on your phone)</td>
+<td>Staying signed in</td>
+<td>Until you sign out or delete the app</td>
+<td>Removed from device storage on sign-out</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Terms acceptance timestamp</td>
+<td>Proof of agreement</td>
+<td>Until account deletion</td>
+<td>Deleted with the account</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Age-verification result (yes/no + time)</td>
+<td>18+ enforcement</td>
+<td>Until account deletion</td>
+<td>Deleted with the account</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Age-verification selfie</td>
+<td>Age estimation</td>
+<td><strong>Not stored by us.</strong> Held by Didit only for the check: [PROVIDER RETENTION]</td>
+<td>Never written to our storage; provider deletion per DPA</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Display name, bio, vibes</td>
+<td>Profile</td>
+<td>Until you change it or delete your account</td>
+<td>Overwritten on edit; deleted with the account</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Gender, interested-in</td>
+<td>Mutual matching only</td>
+<td>Until you change it or delete your account</td>
+<td>Overwritten on edit; deleted with the account</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Profile photos (approved)</td>
+<td>Profile and map face</td>
+<td>Until you delete the photo or your account</td>
+<td>Photo removed from storage and database when you delete it. On account deletion: database record and storage file deleted</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Photos held or rejected by moderation</td>
+<td>Safety</td>
+<td>Held: until a human decides. Rejected: deleted at decision</td>
+<td>Database record deleted on rejection; <strong>storage file deleted within 30 days (proposed)</strong></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Moderation flags on photos (e.g. &quot;nudity&quot;)</td>
+<td>Safety, DSA records</td>
+<td>While the photo exists</td>
+<td>Deleted with the photo</td>
+</tr>
+<tr>
+<td>11</td>
+<td>True location + last-seen time</td>
+<td>Now map and nearby matching</td>
+<td>Overwritten every ~15 min while the app is open; you stop appearing on the map 24 h after last update. <strong>Cleared automatically after 30 days without an update</strong></td>
+<td>Overwritten; deleted with the account</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Display offset (fixed per account)</td>
+<td>Location fuzzing</td>
+<td>Until account deletion</td>
+<td>Deleted with the account</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Plans (place, times, vibes, interested-in)</td>
+<td>Later matching</td>
+<td>Until cancelled or account deletion. <strong>Deleted automatically 30 days after the plan&#39;s end</strong></td>
+<td>Cancelled plans hidden immediately; deleted with the account</td>
+</tr>
+<tr>
+<td>14</td>
+<td>1:1 messages</td>
+<td>Conversations</td>
+<td>Until account deletion of either participant. &quot;Delete&quot; in a chat hides a message for you only</td>
+<td>Deleted when the sender&#39;s account is deleted, or when the conversation is deleted because either participant deleted their account</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Group chats, members, group messages</td>
+<td>Conversations</td>
+<td>Until the group&#39;s creator deletes their account (the group is then deleted), or you leave/delete your account</td>
+<td>Cascade deletion</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Group invites</td>
+<td>Inviting into groups</td>
+<td>Until account deletion. <strong>Pending/declined invites deleted automatically after 90 days</strong></td>
+<td>Cascade deletion</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Read markers (unread badges)</td>
+<td>Unread counts</td>
+<td>Until account deletion</td>
+<td>Cascade deletion</td>
+</tr>
+<tr>
+<td>18</td>
+<td>AI activity suggestions (cached plans)</td>
+<td>Avoid repeat AI calls</td>
+<td>Reused for 12 h. <strong>Deleted automatically after 30 days</strong>, or when the chat is deleted</td>
+<td>Cascade deletion with the chat</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Chat text sent to Anthropic for suggestions</td>
+<td>Generate plans</td>
+<td>Not stored by us beyond the request; Anthropic retains API inputs/outputs per its commercial terms ([CONFIRM — e.g. up to 30 days, no training])</td>
+<td>Per Anthropic DPA</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Blocks</td>
+<td>Safety</td>
+<td>Until account deletion of either user</td>
+<td>Cascade deletion</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Reports (reason, linked message, status, decision note, timestamps)</td>
+<td>DSA notice-and-action, safety</td>
+<td><strong>2 years after the decision</strong>; longer if needed for legal claims or authorities. Kept (with the account link removed) if either person deletes their account</td>
+<td>Deleted automatically by a daily job</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Suspension status and statement of reasons</td>
+<td>DSA, preventing ban evasion</td>
+<td><strong>2 years after termination (proposed)</strong></td>
+<td>Manual / scheduled purge (to build)</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Appeals correspondence (email)</td>
+<td>DSA Art. 20</td>
+<td><strong>2 years after the decision (proposed)</strong></td>
+<td>Delete from mailbox</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Push token</td>
+<td>Message notifications</td>
+<td>Until you sign out / disable notifications / delete account</td>
+<td>Overwritten or deleted with the account</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Server logs (IP, request metadata, errors)</td>
+<td>Security, debugging</td>
+<td>Per hosting provider defaults: [SUPABASE LOG RETENTION, e.g. 1–7 days on current plan]</td>
+<td>Automatic expiry</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Image cache (on your phone)</td>
+<td>Faster loading</td>
+<td>Until the OS clears it or you delete the app</td>
+<td>Device-managed</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Privacy/data-rights requests and responses</td>
+<td>Accountability</td>
+<td><strong>3 years (proposed)</strong></td>
+<td>Delete from mailbox</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Payment records (only if an onboarding fee is introduced)</td>
+<td>Tax/accounting</td>
+<td>7 years (Dutch fiscal retention obligation)</td>
+<td>Per payment provider + accounting records</td>
+</tr>
+</tbody></table>
+
+
+</main>
+<footer>
+<a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/community-guidelines/">Guidelines</a><a href="/child-safety/">Child safety</a><a href="/delete-account/">Delete account</a>
+<p>© 2026 Six Vibes · <a href="mailto:info@sixvibes.org">info@sixvibes.org</a></p>
+</footer>
+</body>
+</html>
