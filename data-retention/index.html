@@ -13,8 +13,8 @@
 <h1>Six Vibes — Data Retention Schedule</h1>
 <p class="note">Draft — this document is under legal review and may change before launch.</p>
 
-<p><strong>Effective date:</strong> [EFFECTIVE DATE] · Controller: [OPERATOR NAME], <a href="mailto:info@sixvibes.org">info@sixvibes.org</a></p>
-<p>General rule: <strong>we keep your data while your account exists, and delete it when you delete your account</strong> (Profile → Settings → Delete account), except where a longer period is listed below for safety or legal reasons. Backups held by our hosting provider roll off within their backup window.</p>
+<p><strong>Effective date:</strong> [EFFECTIVE DATE — confirm on publication; planned launch 13 November 2026] · Controller: Heindrich Fritz, <a href="mailto:info@sixvibes.org">info@sixvibes.org</a></p>
+<p>General rule: <strong>we keep account data only while needed and delete it when you delete your account</strong> (Profile → Settings → Delete account), including your photo files, except where a longer period is listed below for safety or legal reasons. Periods marked &quot;automatically&quot; are enforced by a daily clean-up job on our server. Backups held by our hosting provider roll off within their backup window.</p>
 <table>
 <thead>
 <tr>
@@ -85,8 +85,8 @@
 <td>9</td>
 <td>Photos held or rejected by moderation</td>
 <td>Safety</td>
-<td>Held: until a human decides. Rejected: deleted at decision</td>
-<td>Database record deleted on rejection; <strong>storage file deleted within 30 days (proposed)</strong></td>
+<td>Held: until a human decides (never shown to others meanwhile). Rejected: never shown to others; stays visible only to you, marked &quot;Rejected&quot;, until you delete or replace it</td>
+<td>Database record and storage file deleted when you delete or replace the photo, or delete your account</td>
 </tr>
 <tr>
 <td>10</td>
@@ -176,14 +176,14 @@
 <td>22</td>
 <td>Suspension status and statement of reasons</td>
 <td>DSA, preventing ban evasion</td>
-<td><strong>2 years after termination (proposed)</strong></td>
-<td>Manual / scheduled purge (to build)</td>
+<td>Until the suspension is lifted or the account is deleted; the related report and decision are kept as in row 21</td>
+<td>Cleared on lifting; deleted with the account</td>
 </tr>
 <tr>
 <td>23</td>
 <td>Appeals correspondence (email)</td>
 <td>DSA Art. 20</td>
-<td><strong>2 years after the decision (proposed)</strong></td>
+<td><strong>2 years after the decision (proposed, subject to necessity review)</strong></td>
 <td>Delete from mailbox</td>
 </tr>
 <tr>
@@ -197,7 +197,7 @@
 <td>25</td>
 <td>Server logs (IP, request metadata, errors)</td>
 <td>Security, debugging</td>
-<td>Per hosting provider defaults: [SUPABASE LOG RETENTION, e.g. 1–7 days on current plan]</td>
+<td>Per hosting provider defaults: [SUPABASE LOG RETENTION — 1 day on the current free plan; verify]</td>
 <td>Automatic expiry</td>
 </tr>
 <tr>
@@ -211,7 +211,7 @@
 <td>27</td>
 <td>Privacy/data-rights requests and responses</td>
 <td>Accountability</td>
-<td><strong>3 years (proposed)</strong></td>
+<td><strong>3 years (proposed, subject to necessity review)</strong></td>
 <td>Delete from mailbox</td>
 </tr>
 <tr>
@@ -220,6 +220,27 @@
 <td>Tax/accounting</td>
 <td>7 years (Dutch fiscal retention obligation)</td>
 <td>Per payment provider + accounting records</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Password</td>
+<td>Signing in</td>
+<td>Until you change it or delete your account</td>
+<td>Stored only as a one-way hash by our hosting provider; deleted with the account</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Consent to use gender/interested-in (time)</td>
+<td>Proof of explicit consent</td>
+<td>Until you withdraw it or delete your account</td>
+<td>Withdrawing deletes the consent time, gender and interested-in at once</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Agreement to &quot;Suggest Activities&quot; in a chat (time)</td>
+<td>Proof everyone agreed before chat text went to the AI</td>
+<td>Until you withdraw it, leave the chat, or delete your account</td>
+<td>Deleted on withdrawal; cascade deletion with the chat or account</td>
 </tr>
 </tbody></table>
 
