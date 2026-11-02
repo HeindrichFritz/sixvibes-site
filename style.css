@@ -19,7 +19,7 @@ a { color: var(--accent); }
 header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 16px; }
 header { padding-top: 24px; padding-bottom: 8px; }
 .brand { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-size: 26px; font-weight: 800; }
-.brand img { width: 22px; height: 30px; }
+.brand img { width: 29px; height: 40px; }
 .brand .six { color: var(--accent); }
 .brand .vibes { color: var(--text); }
 main { padding-bottom: 48px; }
